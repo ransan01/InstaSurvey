@@ -11,6 +11,7 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 import { MatTabsModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {EntityFactoryService} from './entity-factory.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [EntityFactoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
