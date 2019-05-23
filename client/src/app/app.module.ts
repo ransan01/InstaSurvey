@@ -12,6 +12,8 @@ import { MatTabsModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {EntityFactoryService} from './entity-factory.service';
+import { SurveyPageComponent } from './survey-page/survey-page.component';
+import { HeaderPaneComponent } from './header-pane/header-pane.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {EntityFactoryService} from './entity-factory.service';
     CreatorComponent,
     PageNotFoundComponent,
     HomeComponent,
-    SurveyListComponent
+    SurveyListComponent,
+    SurveyPageComponent,
+    HeaderPaneComponent
   ],
   imports: [
     BrowserModule,

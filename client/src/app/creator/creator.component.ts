@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Survey from 'survey-angular';
-import {StylesManager, SurveyCreator} from 'survey-creator';
+import { SurveyCreator } from 'survey-creator';
 
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -87,7 +87,7 @@ export class CreatorComponent implements OnInit {
       });
 
     Survey.SurveyNG.render('surveyElement', { model: survey });*/
-    StylesManager
+    Survey.StylesManager
       .applyTheme('bootstrap');
 
     const creatorOptions = {};

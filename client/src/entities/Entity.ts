@@ -10,6 +10,10 @@ export class Entity {
     return this.http.post<any>('http://localhost:5000/api/v1/' + this.name, this.entityObj);
   }
 
+  public get(idVal: string): Observable<Object> {
+    return this.http.get<any>('http://localhost:5000/api/v1/' + this.name + '/' + idVal);
+  }
+
   public getEntity() {
     return this.entityObj;
   }
