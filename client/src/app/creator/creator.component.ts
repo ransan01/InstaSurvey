@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as Survey from 'survey-angular';
+import {StylesManager, SurveyCreator} from 'survey-creator';
+
+import { Injectable } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 
 Survey.StylesManager.applyTheme('default');
 
@@ -8,6 +14,8 @@ Survey.StylesManager.applyTheme('default');
   templateUrl: './creator.component.html',
   styleUrls: ['./creator.component.less']
 })
+
+
 export class CreatorComponent implements OnInit {
   json = {
     completedHtml: '<h3>Thank you for your feedback.</h3> <h5>Your thoughts and ideas will help us to create a great product!</h5>',
@@ -70,15 +78,42 @@ export class CreatorComponent implements OnInit {
     ],
     showQuestionNumbers: 'off'
   };
-
-  constructor() { }
+  private creator;
+  constructor(private  httpClient: HttpClient) { }
 
   ngOnInit() {
-    let survey = new Survey.Model(this.json);
+    /*let survey = new Survey.Model(this.json);
     survey.onComplete.add((result) => {
       });
 
-    Survey.SurveyNG.render('surveyElement', { model: survey });
+    Survey.SurveyNG.render('surveyElement', { model: survey });*/
+    StylesManager
+      .applyTheme('bootstrap');
+
+    const creatorOptions = {};
+    this.creator = new SurveyCreator('creatorElement', creatorOptions);
+
+    // Setting this callback will make visible the "Save" button
+    this.creator.saveSurveyFunc = () => {
+      // save the survey JSON
+      const jsonEl: any = document.getElementById('surveyJSON');
+      jsonEl.value = this.creator.text;
+      this.httpClient.post('localhost:5000/api/v1/survey',
+        {
+          surveyName: 'Test',
+          surveyBody: JSON.parse(this.creator.text)
+        }, {})
+        .subscribe(
+          data  => {
+            console.log('POST Request is successful ', data);
+          },
+          error  => {
+            console.log('Error', error);
+          });
+    };
+
+    this.creator.text = '{ pages: [{ name:\'page1\', questions: [{ type: \'text\', name:\"Test question\"}]}]}';
+    this.loadSurvey();
   }
 
   onClick() {
@@ -94,7 +129,17 @@ export class CreatorComponent implements OnInit {
     };
     console.log(this.json.pages[0].elements);
     this.json.pages[0].elements.push(newQuestion);
-    let survey = new Survey.Model(this.json);
+    const survey = new Survey.Model(this.json);
     Survey.SurveyNG.render('surveyElement', { model: survey });
+  }
+
+  loadSurvey() {
+    const json: any = document.getElementById('surveyJSON');
+    json.value = this.creator.text;
+  }
+
+  setSurvey() {
+    const json: any = document.getElementById('surveyJSON');
+    this.creator.text = json.value;
   }
 }

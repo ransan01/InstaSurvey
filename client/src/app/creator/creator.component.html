@@ -9,3 +9,19 @@
 </mat-tab-group>-->
 <div (click)="onClick()">Add Question</div>
 <div id="surveyElement"></div>
+<div id="surveyContainer">
+  <div id="creatorElement"></div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 exampleoptions">
+  <div>
+    <div class="propertyitem">
+      <p>
+        The current survey JSON:</p>
+      <textarea id="surveyJSON" rows="20" style="width:100%"></textarea>
+      <p></p>
+      <button class="btn btn-primary" (click)="setSurvey()">Apply</button>
+      <pre class=" language-javascript"><code class=" language-javascript">creator<span class="token punctuation">.</span>text <span class="token operator">=</span> MySurveyJSON<span class="token punctuation">;</span></code></pre>
+    </div>
+  </div>
+</div>
+
