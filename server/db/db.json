@@ -489,7 +489,306 @@
           }
         ]
       }
+    },
+    {
+      "id": "DOr6ehJDM",
+      "surveyName": "Survey1",
+      "surveyBody": {
+        "title": "Product Feedback Survey Example",
+        "showProgressBar": "top",
+        "pages": [
+          {
+            "elements": [
+              {
+                "type": "text",
+                "inputMask": "phone",
+                "popupdescription": "Some text"
+              },
+              {
+                "type": "barrating",
+                "name": "barrating",
+                "ratingTheme": "css-stars",
+                "choices": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "type": "bootstrapslider",
+                "name": "bootstrapslider"
+              }
+            ]
+          },
+          {
+            "questions": [
+              {
+                "type": "rating",
+                "name": "satisfaction",
+                "title": "How satisfied are you with the Product?",
+                "mininumRateDescription": "Not Satisfied",
+                "maximumRateDescription": "Completely satisfied"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "9XW4Nlhwq",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              },
+              {
+                "type": "checkbox",
+                "name": "question1",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "checkbox",
+                "name": "question2",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "lXWnS3GrU",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              },
+              {
+                "type": "checkbox",
+                "name": "question1",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "checkbox",
+                "name": "question2",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "8aZM00-ov",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              },
+              {
+                "type": "checkbox",
+                "name": "question1",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "checkbox",
+                "name": "question2",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ohd7hK2GO7",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "9IX0OTLC8I",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "_mI04JZzH",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              },
+              {
+                "type": "text",
+                "name": "question1"
+              },
+              {
+                "type": "dropdown",
+                "name": "question4",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "radiogroup",
+                "name": "question3",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "checkbox",
+                "name": "question2",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g7V-LG7Ej",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              },
+              {
+                "type": "checkbox",
+                "name": "question1",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "radiogroup",
+                "name": "question2",
+                "choices": [
+                  "item1",
+                  "item2",
+                  "item3"
+                ]
+              },
+              {
+                "type": "rating",
+                "name": "question3"
+              },
+              {
+                "type": "boolean",
+                "name": "question4"
+              },
+              {
+                "type": "expression",
+                "name": "question5",
+                "commentText": "Other (describe)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BNwqGIgro",
+      "surveyName": "Test",
+      "surveyBody": {
+        "pages": [
+          {
+            "name": "page1",
+            "elements": [
+              {
+                "type": "text",
+                "name": "Test question"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "surveyStats": []
+  "surveyStats": [],
+  "surveyLinks": []
 }

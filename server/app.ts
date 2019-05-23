@@ -2,16 +2,15 @@
 import express from 'express';
 import * as _ from 'lodash';
 
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync')
-const bodyParser = require('body-parser');  
-const shortid = require('shortid')
-
+import cors from "cors";
+import shortid from "shortid";
+import bodyParser from "body-parser";
+import FileSync from "lowdb/adapters/FileSync";
+import low from "lowdb";
 // Set up the express app
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const cors = require('cors');
 const adapter = new FileSync('./db/db.json');
 const dbFile = low(adapter);
 dbFile.defaults({ survey: [], surveyStats: [], surveyLinks: []})
@@ -56,8 +55,10 @@ app.get('/api/v1/surveyLink/:id', (req, res) => {
 
 app.options('*', cors());
 app.post('/api/v1/survey', (req, res) => {
+  console.log('/api/v1/survey');
   console.log(req.body);
   console.log(req.body.surveyName);
+  res.setHeader('Access-Control-Allow-Origin', '*');
   if(!req.body.surveyName) {
     return res.status(400).send({
       success: 'false',
@@ -69,7 +70,6 @@ app.post('/api/v1/survey', (req, res) => {
       message: 'Survey data missing'
     });
   }
-
   const surveyIdentifier = shortid.generate();
   dbFile.get('survey')
 	.push({ id: surveyIdentifier, surveyName: req.body.surveyName, surveyBody: req.body.surveyBody})
