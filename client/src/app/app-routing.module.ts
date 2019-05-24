@@ -6,12 +6,16 @@ import {HomeComponent} from './home/home.component';
 import {SurveyListComponent} from './survey-list/survey-list.component';
 import {SurveyPageComponent} from './survey-page/survey-page.component';
 import {SurveyDetailsComponent} from './survey-details/survey-details.component';
+import {SurveyLinkGeneratorComponent} from './survey-details/survey-link-generator/survey-link-generator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'creator', component: CreatorComponent},
   { path: 'survey', component: SurveyListComponent},
-  { path: 'survey/details/:id', component: SurveyDetailsComponent},
+  { path: 'survey/details/:id', component: SurveyDetailsComponent,
+    children: [
+      { path: 'linkGenerator', component: SurveyLinkGeneratorComponent},
+    ]},
   { path: 'survey-it/:id', component: SurveyPageComponent},
   { path: '**', component: PageNotFoundComponent}
 ];

@@ -16,6 +16,7 @@ import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { HeaderPaneComponent } from './header-pane/header-pane.component';
 import { SurveyRenderComponent } from './survey-render/survey-render.component';
 import { SurveyDetailsComponent } from './survey-details/survey-details.component';
+import { SurveyLinkGeneratorComponent } from './survey-details/survey-link-generator/survey-link-generator.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SurveyDetailsComponent } from './survey-details/survey-details.componen
     SurveyPageComponent,
     HeaderPaneComponent,
     SurveyRenderComponent,
-    SurveyDetailsComponent
+    SurveyDetailsComponent,
+    SurveyLinkGeneratorComponent
   ],
   imports: [
     BrowserModule,
