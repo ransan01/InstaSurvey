@@ -2,7 +2,7 @@
 </div>
 <div class="mainContainer">
   <div class="contentPanel flex-column">
-    <div *ngFor="let survey of surveyList">
+    <div class="landingPage-titleText" *ngFor="let survey of surveyList">
       <a [routerLink]="['/survey/details/', survey.id]">{{survey.surveyName}}</a>
     </div>
   </div>
