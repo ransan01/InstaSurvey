@@ -118,6 +118,8 @@ app.post('/api/v1/survey/consume', (req, res) => {
   return res.status(200).send(JSON.stringify(responseObj));
 });
 
+app.options('*', cors());
+app.post('*', cors());
 app.post('/api/v1/surveyLink', (req, res) => {
   if(!req.body.surveyId) {
     return res.status(400).send({
