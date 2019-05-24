@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {EntityFactoryService} from './entity-factory.service';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { HeaderPaneComponent } from './header-pane/header-pane.component';
+import { SurveyDetailsComponent } from './survey-details/survey-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderPaneComponent } from './header-pane/header-pane.component';
     HomeComponent,
     SurveyListComponent,
     SurveyPageComponent,
-    HeaderPaneComponent
+    HeaderPaneComponent,
+    SurveyDetailsComponent
   ],
   imports: [
     BrowserModule,

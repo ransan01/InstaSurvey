@@ -13,7 +13,7 @@ export class Entity {
     return this.http.post<any>(BAS_URL + this.name, this.entityObj);
   }
 
-  public get(idVal: string): Observable<Object> {
+  public get(idVal: string = null): Observable<Object> {
     let urlStr = BAS_URL;
     if (!_.isNil(idVal)) {
       urlStr += this.name + '/' + idVal;
