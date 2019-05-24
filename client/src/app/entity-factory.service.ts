@@ -13,9 +13,4 @@ export class EntityFactoryService {
                       entityObj: any): Entity {
     return new Entity(name, entityObj, this.http);
   }
-
-  public getEntity(name: string,
-                   entityObj: any) {
-    return new Entity(name, entityObj, this.http);
-  }
 }

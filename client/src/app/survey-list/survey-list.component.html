@@ -1,1 +1,10 @@
-<div id="surveyElement"></div>
+<div class="sidebar sidebar--halfSize">
+</div>
+<div class="mainContainer">
+  <div class="contentPanel flex-column">
+    <div *ngFor="let survey of surveyList">
+      <a routerLink="">{{survey.surveyName}}</a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

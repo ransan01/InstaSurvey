@@ -16,11 +16,6 @@ const dbFile = low(adapter);
 dbFile.defaults({ survey: [], surveyStats: [], surveyLinks: []})
   .write();
 
-// Add a post
-
-
-// get all todos
-
 app.get('*', cors());
 app.get('/api/v1/survey', (req, res) => {
   const surveyList = dbFile.get('survey');

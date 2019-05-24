@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {HomeComponent} from './home/home.component';
 import {SurveyListComponent} from './survey-list/survey-list.component';
 import {SurveyPageComponent} from './survey-page/survey-page.component';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
