@@ -33,7 +33,7 @@ export class SurveyPageComponent implements OnInit {
           return;
         }
         surveyEntity.get(data[SURVEY_LINK].surveyId)
-          .subscribe((surveyData) => {
+          .subscribe((surveyData: any) => {
             console.log('surveyData');
             console.log(surveyData);
             const survey = new Model(surveyData.survey.surveyBody);
