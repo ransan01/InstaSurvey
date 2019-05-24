@@ -15,6 +15,7 @@ import {EntityFactoryService} from './entity-factory.service';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { HeaderPaneComponent } from './header-pane/header-pane.component';
 import { SurveyRenderComponent } from './survey-render/survey-render.component';
+import { SurveyDetailsComponent } from './survey-details/survey-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SurveyRenderComponent } from './survey-render/survey-render.component';
     SurveyListComponent,
     SurveyPageComponent,
     HeaderPaneComponent,
-    SurveyRenderComponent
+    SurveyRenderComponent,
+    SurveyDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -30,4 +30,12 @@ RUN yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel -y
 
 RUN npm install -g @angular/cli
 
+RUN cd /home && \
+    rm -rf InstantSurvey && \
+    /usr/local/git/bin/git clone --depth 1  https://github.com/ransan01/InstantSurvey.git && \
+    cd InstantSurvey/client && \
+    npm install && \
+    cd ../server && \
+    npm install
+    
 ENTRYPOINT [ "/bin/bash" ]
