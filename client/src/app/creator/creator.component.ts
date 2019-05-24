@@ -7,6 +7,7 @@ import {HttpClientModule, HttpErrorResponse} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
+import {Router} from '@angular/router';
 
 
 Survey.StylesManager.applyTheme('default');
@@ -81,7 +82,8 @@ export class CreatorComponent implements OnInit {
     showQuestionNumbers: 'off'
   };
   private creator;
-  constructor(private  httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private route: Router) { }
 
   ngOnInit() {
     /*let survey = new Survey.Model(this.json);
@@ -109,6 +111,7 @@ export class CreatorComponent implements OnInit {
         .subscribe((res) => {
           console.log('Successful POST');
           console.log(res);
+          this.route.navigate(['/survey/details', res['surveyId']])
         }, (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
             // A client-side or network error occurred.
