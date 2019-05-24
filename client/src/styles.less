@@ -1,4 +1,4 @@
-app-header-pane {
+.app-header-pane {
   background-color: #1C2B36;
   position: fixed;
   z-index: 904;
@@ -7,7 +7,6 @@ app-header-pane {
   width: 100%;
   min-width: 320px;
   padding: 0 32px 0 40px;
-  min-height: 70px;
 }
 
 .svd_commercial_container {
@@ -21,4 +20,67 @@ app-header-pane {
   white-space: nowrap;
   float: left;
   line-height: 60px;
+  cursor: hand;
+}
+
+.mainContainer {
+  margin-left: 180px;
+  padding: 100px 0 34px;
+  min-height: 500px;
+}
+
+.contentPanel {
+  padding: 8px 32px 8px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  width: 180px;
+  top: 66px;
+  left: 0;
+  z-index: 904;
+  display: block;
+  min-height: 100%;
+  background-color: #1C2B36;
+  height: 100%;
+  position: fixed;
+  border-top: solid 2px grey;
+  &.sidebar--halfSize {
+    width: 80px;
+  }
+}
+
+app-creator {
+  overflow-x: hidden;
+  max-height: 80%;
+}
+
+app-root {
+  max-height: 100%;
+}
+
+.landingPage-titleText {
+  color: black;
+  font-size: 48px;
+  font-family: Roboto,sans-serif;
+  white-space: nowrap;
+  line-height: 60px;
+  cursor: hand;
+}
+
+.navBar {
+  padding: 50px 5px 0 5px;
+}
+
+.navLink{
+  & a {
+    color: white;
+    font-size: 18px;
+  }
+  padding: 10px 5px;
+}
+
+.flex-column {
+  flex-direction: column;
 }

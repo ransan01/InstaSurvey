@@ -1,5 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/index';
+import * as _ from 'lodash';
+
+const BAS_URL = 'http://localhost:5000/api/v1/';
 export class Entity {
   public constructor(private name: string,
                      private entityObj: Object,
@@ -7,11 +10,17 @@ export class Entity {
   }
 
   public create(): Observable<Object> {
-    return this.http.post<any>('http://localhost:5000/api/v1/' + this.name, this.entityObj);
+    return this.http.post<any>(BAS_URL + this.name, this.entityObj);
   }
 
   public get(idVal: string): Observable<Object> {
-    return this.http.get<any>('http://localhost:5000/api/v1/' + this.name + '/' + idVal);
+    let urlStr = BAS_URL;
+    if (!_.isNil(idVal)) {
+      urlStr += this.name + '/' + idVal;
+    } else {
+      urlStr += this.name;
+    }
+    return this.http.get<any>(urlStr);
   }
 
   public getEntity() {

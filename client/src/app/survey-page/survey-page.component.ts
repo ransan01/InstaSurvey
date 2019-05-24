@@ -22,11 +22,11 @@ export class SurveyPageComponent implements OnInit {
   }
 
   public getSurvey(idVal: string): void {
-    const surveyLinkEntity: Entity = this.entityFactory.getEntity('surveyLink', null);
+    const surveyLinkEntity: Entity = this.entityFactory.createEntity('surveyLink', null);
     surveyLinkEntity.get(idVal)
       .subscribe((data: SurveyLink) => {
         console.log(data);
-        const surveyEntity: Entity = this.entityFactory.getEntity('survey', null);
+        const surveyEntity: Entity = this.entityFactory.createEntity('survey', null);
         if (_.isNil(data[SURVEY_LINK])) {
           console.log("Error: Survey link not found");
           return;
