@@ -78,7 +78,7 @@ export class SurveyListComponent implements OnInit {
               private entityFactory: EntityFactoryService) { }
 
   ngOnInit() {
-    let survey = new Survey.Model(this.json);
+    const survey = new Survey.Model(this.json);
     survey.onComplete.add((result) => {
       this.sendRequest();
     });
@@ -89,38 +89,38 @@ export class SurveyListComponent implements OnInit {
   public sendRequest() {
     console.log('Sending Request');
     const dataObj = {
-      surveyName: "Survey1",
+      surveyName: 'Survey1',
       surveyBody: {
-        title: "Product Feedback Survey Example",
-        showProgressBar: "top",
+        title: 'Product Feedback Survey Example',
+        showProgressBar: 'top',
         pages: [
           {
             elements: [
               {
-                type: "text",
-                inputMask: "phone",
-                popupdescription: "Some text"
+                type: 'text',
+                inputMask: 'phone',
+                popupdescription: 'Some text'
               },
               {
-                type: "barrating",
-                name: "barrating",
-                ratingTheme: "css-stars",
+                type: 'barrating',
+                name: 'barrating',
+                ratingTheme: 'css-stars',
                 choices: [1, 2, 3, 4, 5]
               },
               {
-                type: "bootstrapslider",
-                name: "bootstrapslider"
+                type: 'bootstrapslider',
+                name: 'bootstrapslider'
               },
             ]
           },
           {
             questions: [
               {
-                type: "rating",
-                name: "satisfaction",
-                title: "How satisfied are you with the Product?",
-                mininumRateDescription: "Not Satisfied",
-                maximumRateDescription: "Completely satisfied"
+                type: 'rating',
+                name: 'satisfaction',
+                title: 'How satisfied are you with the Product?',
+                mininumRateDescription: 'Not Satisfied',
+                maximumRateDescription: 'Completely satisfied'
               }
             ]
           },

@@ -10,12 +10,12 @@ export class EntityFactoryService {
   constructor(private http: HttpClient) { }
 
   public createEntity(name: string,
-                      entityObj: Object): Entity {
+                      entityObj: any): Entity {
     return new Entity(name, entityObj, this.http);
   }
 
   public getEntity(name: string,
-                   entityObj: Object) {
+                   entityObj: any) {
     return new Entity(name, entityObj, this.http);
   }
 }
