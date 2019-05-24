@@ -45,7 +45,7 @@ app.get('/api/v1/survey/:id', (req, res) => {
 app.get('*', cors());
 app.get('/api/v1/surveyLink/:id', (req, res) => {
   const surveyLinkObj = dbFile.get('surveyLinks')
-      .find({id: req.params.id});
+      .find({surveyLinkId: req.params.id});
   res.status(200).send({
     success: 'true',
     message: 'survey link retrieved successfully',
@@ -95,7 +95,7 @@ app.post('/api/v1/survey/consume', (req, res) => {
       message: 'Survey data required'
     });
   } else if (!dbFile.get('surveyLinks')
-          .find({ id: req.body.surveyLinkId})
+          .find({ surveyLinkId: req.body.surveyLinkId})
           .value()
           .isValid) {
     return res.status(400).send({
@@ -105,7 +105,7 @@ app.post('/api/v1/survey/consume', (req, res) => {
   }
 
   dbFile.get('surveyLinks')
-      .find({ id: req.body.surveyLinkId})
+      .find({ surveyLinkId: req.body.surveyLinkId})
       .assign({ isValid: false})
       .write();
 
@@ -133,13 +133,13 @@ app.post('/api/v1/surveyLink', (req, res) => {
 
   const surveyLinkIdentifier = shortid.generate();
   dbFile.get('surveyLinks')
-      .push({ id: surveyLinkIdentifier, surveyId: req.body.surveyId, isValid: true})
+      .push({ surveyLinkId: surveyLinkIdentifier, surveyId: req.body.surveyId, isValid: true})
       .write();
   console.log(req.body);
   const responseObj = {
     success: 'true',
     message: 'survey link added successfully',
-    surveyLink: surveyLinkIdentifier
+    surveyLinkId: surveyLinkIdentifier
   };
   return res.status(201).send(JSON.stringify(responseObj));
 });
